@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Beans Web</title>
+    <link rel="stylesheet" href="mainstyle.css">
+	<link rel="stylesheet" href="navbar.html">
+</head>
+  <script>
+function emailIsValid(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function validateForm() {
+
+	let email = document.forms["Application"]["email"].value;
+
+	if (emailIsValid(email)==false) {
+		alert("email format in incorrect");
+		return false;
+	}
+	return true;
+}
+</script>
+<body>
+    <header>
+        <h1><a href="index.html" class="homelink">Hot Beans Web</a></h1>
+        <nav>
+            <ul>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="staffprofiles.html">Staff Profiles</a></li>
+                <li><a href="jobrelatedinformation.html">Job Related Information</a></li>
+				<li><a href="courselinks.html">Course Links</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>				
+				<li><a href="index.html"><img src="beans.png" alt="hot beans" style="width:100px;height:100px;" class="imgteam"></a></li> 
+		</ul>
+		
+		</nav>
+    </header>
+  <title> Job Application Form</title> 
+  <body>
+  <header>
+  <h1 class="header1">Job Application Form</h1>
+</header>
+<form name="Application" action="https://formspree.io/f/mgegdywg" onsubmit="return validateForm()" method="POST">
+<center>
+<label>
+Full Name: 
+<input type="text" name="fullname" required=invalid>
+</label>
+<br>
+<br>
+<br>
+<br>
+<label>
+Address:
+<input type="text" name="address" required=invalid>
+</label>
+<br>
+<br>
+<br>
+<br>
+<label>
+Phone Number:
+<input type="number" name="number" "minlength"="11" "maxlength="11" required=invalid >
+</label>
+<br>
+<br>
+<br>
+<br>
+  <label>
+Email Address:
+    <input type="email" name="email" required=invalid>
+  </label>
+  <br>
+  <br>
+  <br>
+  <br>
+  <label>
+Date Of Birth:
+<input type="date" name="date of birth" required=invalid>
+</label>
+<br>
+<br>
+<br>
+<br>
+<label>
+Ethnicity:
+<label for="ethnicity"></label>
+<select name="Ethnicity" id="Ethnicity">
+ <option value="Null">Choose your ethnicity</option>
+  <option value="White">White</option>
+  <option value="Asian">Asian or Asian British</option>
+  <option value="Black">Black, Black British, Caribbean or African</option>
+  <option value="Mixed Race"">Mixed or multiple ethnic groups</option>
+  <option value="Other"">Other ethnic group</option>
+</select>
+<br>
+<br>
+<br>
+<br>
+<label>
+Gender: 
+<input type="radio" name="gender" value="male" Required=invalid >Male
+<input type="radio" name="gender" value="female">Female
+<input type="radio" name="gender" value="other">Other
+</label>
+<br>
+<br>
+<br>
+<br>
+  <label>
+Where did you hear about us? (optional)	
+    <textarea name="message"></textarea>
+  </label>
+  <br>
+  <br>
+  <br>
+<p><label for="myfile"><u>Attach CV:</label><br>
+<input type="file" id="myfile" name="myfile"> </br>
+<br>
+<br>
+ <button type="submit">Send</button>
+ <button onclick="window.location.href='index.html'">      Back     </button>
+ </body>
+</form>
+
